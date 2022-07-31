@@ -44,8 +44,8 @@ public class Search {
 			String option = sc.nextLine();
 			if(!option.equals("y")) {
 				System.out.println("Thanks for using the Web Search Engine");
-				sc.close();
 				break;
+				
 			}
 		}
 		

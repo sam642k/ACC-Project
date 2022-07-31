@@ -18,7 +18,7 @@ public class Suggestions {
 			String word;
 			while((word= br.readLine())!=null)
 				dictWords.add(word);
-			int editDistance = 10, editDistanceFirstWord = 10, editDistanceSecondWord = 10;
+			int editDistance = Integer.MAX_VALUE, editDistanceFirstWord = Integer.MAX_VALUE, editDistanceSecondWord = Integer.MAX_VALUE;
 			int firstSuggestion = 0;
 			int secondSuggestion = 0;
 			

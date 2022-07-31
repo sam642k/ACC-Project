@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.util.TreeMap;
 
 public class Dictionary {
-	public static TreeMap<String,String> dictionary(String filename,TreeMap<String,String> aListWords) throws Exception {
+	public static TreeMap<String,String> dictionary(String filename, TreeMap<String,String> aListWords) throws Exception {
 		File file = new File(filename);
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String s;
@@ -22,7 +22,7 @@ public class Dictionary {
 	}
 	
 	public static void createDictionary() {
-		File directory = new File("C:\\D\\MAC\\ACC\\Project\\Accproject3\\text-files");
+		File directory = new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\text-files");
 		String[] children = directory.list();
 		TreeMap<String,String> aListWords = new TreeMap<String,String>();
 		for (String str:children)
@@ -31,8 +31,8 @@ public class Dictionary {
 			if (strx.equals("txt"))
 			{
 				try {
-					dictionary("C:\\D\\MAC\\ACC\\Project\\Accproject3\\text-files\\" + "/"+ str,aListWords);
-					FileWriter writer = new FileWriter("dictionary.txt"); 
+					dictionary("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\text-files\\" + "/"+ str, aListWords);
+					FileWriter writer = new FileWriter("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\dictionary.txt"); 
 					for(String s: aListWords.values()) {
 					  writer.write(s + System.lineSeparator());
 					}
