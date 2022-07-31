@@ -16,6 +16,7 @@ public class WebSearchEngine {
 			System.out.print("Enter the URl to crawl: ");
 			String url= sc.nextLine();
 			
+			//crawls
 			webCrawler.crawlPageLinks(url);
 			
 			HTMLToText.convertFiles();
