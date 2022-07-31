@@ -11,7 +11,7 @@ import java.util.List;
 public class Suggestions {
 
 	public static void suggest(String searchQuery) {
-		File file= new File("dictionary.txt");
+		File file= new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\dictionary.txt");
 		try {
 			BufferedReader br= new BufferedReader(new FileReader(file));
 			List<String> dictWords= new ArrayList<>();

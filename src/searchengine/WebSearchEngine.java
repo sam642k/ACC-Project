@@ -21,7 +21,7 @@ public class WebSearchEngine {
 			
 			HTMLToText.convertFiles();
 			
-			Search.searchQuery();
+
 		case "2":
 			Search.searchQuery();
 		default:

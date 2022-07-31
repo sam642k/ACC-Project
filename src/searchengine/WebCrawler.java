@@ -2,6 +2,7 @@ package searchengine;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -51,6 +52,9 @@ public class WebCrawler {
 		try {
 			URL url= new URL(urlString);
 			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+			File folder= new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\html-files");
+			if(!folder.exists())
+				folder.mkdir();
 			BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\html-files\\" + fileName+".html"));
 			String line;
 			while((line= br.readLine())!=null)

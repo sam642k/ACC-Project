@@ -25,7 +25,7 @@ public class HTMLToText {
 	}
 
 	public static void convertFiles() {
-		File folder = new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\html-files\\");
+		File folder = new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\html-files");
 		File[] listOfFiles = folder.listFiles();
 
 		for (int i = 0; i < listOfFiles.length; i++) {
