@@ -9,12 +9,12 @@ import org.jsoup.nodes.Document;
 
 public class HTMLToText {
 	
-	public static void textFileCreator(String fileName) {
-		File myfile = new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\html-files\\" + fileName);
+	public static void textFileCreator(File file) {
+		
 		try {
-			Document document = Jsoup.parse(myfile, "UTF-8");
+			Document document = Jsoup.parse(file, "UTF-8");
 			String string = document.text();
-			String fileNameWithOutExt = fileName.replaceFirst("[.][^.]+$", "");
+			String fileNameWithOutExt = file.getName().replaceFirst("[.][^.]+$", "");
 			PrintWriter out = new PrintWriter("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\text-files\\" + fileNameWithOutExt + ".txt");
 			out.println(string);
 			out.close();
@@ -26,11 +26,12 @@ public class HTMLToText {
 
 	public static void convertFiles() {
 		File folder = new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\html-files");
+		
 		File[] listOfFiles = folder.listFiles();
 
 		for (int i = 0; i < listOfFiles.length; i++) {
 			if (listOfFiles[i].isFile()) {
-				textFileCreator(listOfFiles[i].getName());
+				textFileCreator(listOfFiles[i]);
 			}
 		}
 		System.out.println("Text files generated.");

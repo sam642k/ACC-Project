@@ -19,9 +19,7 @@ public class Search {
 			int noOfOccurance=0;
 			int noOfFiles=0;
 			
-			File folder= new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\text-files");
-			if(!folder.exists())
-				folder.mkdir();
+			
 			
 			File my_dir = new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\text-files");
 			File[] fileArray = my_dir.listFiles();
@@ -37,12 +35,11 @@ public class Search {
 			System.out.println("\n Total no. of files '"+searchQuery+"' occurs is "+noOfFiles);
 			if(noOfFiles==0) {
 				System.out.println("\nPlease wait while we give you suggestions\n");
-				System.out.println("HELLOOOOO");
 				Dictionary.createDictionary(); //A dictionary is created with all the words
 				Suggestions.suggest(searchQuery); //Suggestions are given using the edit distance
 			}
-			
-			Rank.rankFiles(hashMap, noOfFiles);
+			else
+				Rank.rankFiles(hashMap, noOfFiles);
 			System.out.println("\n\nDo you want to continue?");
 			System.out.println("If yes please enter y if 'Yes'");
 			System.out.println("If you want to exit hit any key");
