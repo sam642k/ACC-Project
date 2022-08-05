@@ -20,10 +20,12 @@ public class WebSearchEngine {
 			webCrawler.crawlPageLinks(url);
 			
 			HTMLToText.convertFiles();
-			
-
+			Dictionary.createDictionary(); //A dictionary is created with all the words
+			Search.searchQuery();
+			break;
 		case "2":
 			Search.searchQuery();
+			break;
 		default:
 			System.out.println("Wrong input");
 		}

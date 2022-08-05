@@ -35,11 +35,10 @@ public class Search {
 			System.out.println("\n Total no. of files '"+searchQuery+"' occurs is "+noOfFiles);
 			if(noOfFiles==0) {
 				System.out.println("\nPlease wait while we give you suggestions\n");
-				Dictionary.createDictionary(); //A dictionary is created with all the words
 				Suggestions.suggest(searchQuery); //Suggestions are given using the edit distance
 			}
 			else
-				Rank.rankFiles(hashMap, noOfFiles);
+				Rank.rankFiles(hashMap);
 			System.out.println("\n\nDo you want to continue?");
 			System.out.println("If yes please enter y if 'Yes'");
 			System.out.println("If you want to exit hit any key");
@@ -65,8 +64,8 @@ public class Search {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		char txt[] = data.toCharArray();
-		char pat[] = searchQuery.toCharArray();
+		char txt[] = data.toLowerCase().toCharArray();
+		char pat[] = searchQuery.toLowerCase().toCharArray();
 		int result = boyerMooreSearch(txt, pat);
 		if (result != 0) {
 			System.out.println("\nThe file that contains all the above words" + file.getName());
@@ -105,9 +104,6 @@ public class Search {
 	static int max (int a, int b) { 
     	if(a > b) return a;
     	return b;
-    } 
-    static void badCharHeuristic(char []str, int size, int badchar[]) { 
-     
     }
 
 }

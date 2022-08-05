@@ -22,7 +22,6 @@ public class Dictionary {
 	}
 	
 	public static void createDictionary() {
-		System.out.println("Hellooooooo");
 		File directory = new File("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\text-files");
 		String[] children = directory.list();
 		TreeMap<String,String> aListWords = new TreeMap<String,String>();
@@ -33,7 +32,6 @@ public class Dictionary {
 			{
 				try {
 					dictionary("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\text-files\\" + "/"+ str, aListWords);
-					System.out.println("HELLOO");
 					FileWriter writer = new FileWriter("C:\\D\\MAC\\ACC\\Project\\ACC-Project\\dictionary.txt"); 
 					for(String s: aListWords.values()) {
 					  writer.write(s + System.lineSeparator());
